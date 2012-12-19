@@ -1,80 +1,107 @@
 //
-//  ListsTableViewController.m
+//  CreateListViewController.m
 //  Superlista
 //
 //  Created by Alfredo Scoppa on 12/19/12.
 //  Copyright (c) 2012 Alfredo Scoppa. All rights reserved.
 //
 
-#import "ListsTableViewController.h"
 #import "CreateListViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface ListsTableViewController ()
+@interface CreateListViewController ()
 
 @end
 
-@implementation ListsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        self.listsTitle = @[@"List1",@"List2",@"List3",@"List4", @"List5"];
-    }
-    return self;
-}
+@implementation CreateListViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    self.title = @"Lists";
-    
-    UIBarButtonItem *addNewList = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+    self.listItems = @[@"Item1",@"Item2",@"Item3"];
+    self.title = @"Create List";
+    UIBarButtonItem *saveList = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem: UIBarButtonSystemItemDone
                                    target:self
-                                   action:@selector(addNewList:)];
+                                   action:@selector(saveListButtonTap:)];
     
-    [[self navigationItem] setRightBarButtonItem:addNewList];
+    [[self navigationItem] setRightBarButtonItem:saveList];
+    
+    
+    CGRect backgroundFrame = self.view.frame;
+    backgroundFrame.origin.y=0;
+    backgroundFrame.size.height=60;
+    UIImageView * background = [[UIImageView alloc] initWithFrame:backgroundFrame];
+    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
+    [background setContentMode:UIViewContentModeScaleToFill];
+    background.image = backgroundImage;
+    [self.view addSubview:background];
+    
+    
+    UITextView *listName = [[UITextView alloc] initWithFrame: CGRectMake(10,20,self.view.frame.size.width-20,40)];
+    listName.font = [UIFont fontWithName:@"Helvetica" size:14];
+    listName.text = @"Your list name";
+    [listName.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [listName.layer setBorderColor: [[UIColor grayColor] CGColor]];
+    [listName.layer setBorderWidth: .8];
+    [listName.layer setCornerRadius:10.0f];
+    [listName.layer setMasksToBounds:YES];
+    
+    [self.view addSubview: listName];
+    
+    self.tableView = [[UITableView alloc]
+                      initWithFrame:CGRectMake(0,60,self.view.frame.size.width,self.view.frame.size.height-30)
+                      style:UITableViewStyleGrouped];
+    
+    
+    UIImageView * background2 = [[UIImageView alloc] initWithFrame:backgroundFrame];
+    UIImage *backgroundImage2 = [UIImage imageNamed:@"background"];
+    [background setContentMode:UIViewContentModeScaleToFill];
+    background2.image = backgroundImage2;
+    self.tableView.backgroundView = background2;
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+
+    
+    [self.view addSubview: self.tableView];
 }
 
-- (void)addNewList: (UIBarButtonItem *)sender
+- (void) saveListButtonTap:(UIBarButtonItem *)sender
 {
-    CreateListViewController * createListViewController = [[CreateListViewController alloc] init];
-    [self.navigationController pushViewController:createListViewController animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return self.listsTitle.count;
+    return self.listItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
+    
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = self.listsTitle[indexPath.row];
+    cell.textLabel.text = self.listItems[indexPath.row];
     
     return cell;
+
 }
 
 /*
