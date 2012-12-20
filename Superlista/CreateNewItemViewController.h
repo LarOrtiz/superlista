@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateNewItemViewController : UIViewController
+@interface CreateNewItemViewController : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate>
+@property (strong, nonatomic) NSArray *units;
+@property (strong, nonatomic) NSArray *quantities;
 
 @end
