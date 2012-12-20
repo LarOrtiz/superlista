@@ -17,6 +17,11 @@
 		D035862A16818AED002AAAB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D035862916818AED002AAAB7 /* Default@2x.png */; };
 		D035862C16818AED002AAAB7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D035862B16818AED002AAAB7 /* Default-568h@2x.png */; };
 		D03586461681968B002AAAB7 /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03586451681968B002AAAB7 /* ListsTableViewController.m */; };
+		D0CA31C516822E5900492B62 /* CreateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA31C416822E5900492B62 /* CreateListViewController.m */; };
+		D0CA31D21682403200492B62 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA31D11682403200492B62 /* background.png */; };
+		D0CA31D61682422900492B62 /* textFieldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA31D51682422900492B62 /* textFieldBorder.png */; };
+		D0CA31E11682B1B400492B62 /* EditableDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA31E01682B1B400492B62 /* EditableDetailCell.m */; };
+		D0CA31E41682BD6900492B62 /* CreateNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA31E31682BD6900492B62 /* CreateNewItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,14 @@
 		D035862B16818AED002AAAB7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D03586441681968B002AAAB7 /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
 		D03586451681968B002AAAB7 /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
+		D0CA31C316822E5900492B62 /* CreateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateListViewController.h; sourceTree = "<group>"; };
+		D0CA31C416822E5900492B62 /* CreateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateListViewController.m; sourceTree = "<group>"; };
+		D0CA31D11682403200492B62 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D0CA31D51682422900492B62 /* textFieldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textFieldBorder.png; sourceTree = "<group>"; };
+		D0CA31DF1682B1B400492B62 /* EditableDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableDetailCell.h; sourceTree = "<group>"; };
+		D0CA31E01682B1B400492B62 /* EditableDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableDetailCell.m; sourceTree = "<group>"; };
+		D0CA31E21682BD6900492B62 /* CreateNewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewItemViewController.h; sourceTree = "<group>"; };
+		D0CA31E31682BD6900492B62 /* CreateNewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +94,19 @@
 		D035861B16818AED002AAAB7 /* Superlista */ = {
 			isa = PBXGroup;
 			children = (
+				D0CA31DF1682B1B400492B62 /* EditableDetailCell.h */,
+				D0CA31E01682B1B400492B62 /* EditableDetailCell.m */,
+				D0CA31D51682422900492B62 /* textFieldBorder.png */,
+				D0CA31D11682403200492B62 /* background.png */,
 				D035862416818AED002AAAB7 /* SuperlistaAppDelegate.h */,
 				D035862516818AED002AAAB7 /* SuperlistaAppDelegate.m */,
 				D035861C16818AED002AAAB7 /* Supporting Files */,
 				D03586441681968B002AAAB7 /* ListsTableViewController.h */,
 				D03586451681968B002AAAB7 /* ListsTableViewController.m */,
+				D0CA31C316822E5900492B62 /* CreateListViewController.h */,
+				D0CA31C416822E5900492B62 /* CreateListViewController.m */,
+				D0CA31E21682BD6900492B62 /* CreateNewItemViewController.h */,
+				D0CA31E31682BD6900492B62 /* CreateNewItemViewController.m */,
 			);
 			path = Superlista;
 			sourceTree = "<group>";
@@ -160,6 +181,8 @@
 				D035862816818AED002AAAB7 /* Default.png in Resources */,
 				D035862A16818AED002AAAB7 /* Default@2x.png in Resources */,
 				D035862C16818AED002AAAB7 /* Default-568h@2x.png in Resources */,
+				D0CA31D21682403200492B62 /* background.png in Resources */,
+				D0CA31D61682422900492B62 /* textFieldBorder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +196,9 @@
 				D035862216818AED002AAAB7 /* main.m in Sources */,
 				D035862616818AED002AAAB7 /* SuperlistaAppDelegate.m in Sources */,
 				D03586461681968B002AAAB7 /* ListsTableViewController.m in Sources */,
+				D0CA31C516822E5900492B62 /* CreateListViewController.m in Sources */,
+				D0CA31E11682B1B400492B62 /* EditableDetailCell.m in Sources */,
+				D0CA31E41682BD6900492B62 /* CreateNewItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,7 +73,7 @@
     }
     
     cell.textLabel.text = self.listsTitle[indexPath.row];
-    
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
 

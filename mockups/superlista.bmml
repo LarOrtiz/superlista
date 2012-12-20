@@ -43,11 +43,11 @@
             <bgPattern>topOnly</bgPattern>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="21" y="108" w="228" h="-1" measuredW="59" measuredH="22" zOrder="1" locked="false" isInGroup="75">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="21" y="108" w="228" h="-1" measuredW="76" measuredH="22" zOrder="1" locked="false" isInGroup="75">
           <controlProperties>
             <color>16777215</color>
             <size>14</size>
-            <text>Chino%20list</text>
+            <text>Create%20List</text>
           </controlProperties>
         </control>
         <control controlID="2" controlTypeID="com.balsamiq.mockups::TextArea" x="36" y="155" w="209" h="48" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="75">
@@ -151,7 +151,7 @@
             <text>Lists</text>
           </controlProperties>
         </control>
-        <control controlID="12" controlTypeID="com.balsamiq.mockups::PointyButton" x="189" y="105" w="56" h="-1" measuredW="47" measuredH="27" zOrder="4" locked="false" isInGroup="77">
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::PointyButton" x="189" y="105" w="56" h="-1" measuredW="49" measuredH="27" zOrder="4" locked="false" isInGroup="77">
           <controlProperties>
             <direction>center</direction>
             <size>10</size>
@@ -202,7 +202,7 @@
             <text>Lists</text>
           </controlProperties>
         </control>
-        <control controlID="12" controlTypeID="com.balsamiq.mockups::PointyButton" x="189" y="105" w="56" h="-1" measuredW="47" measuredH="27" zOrder="4" locked="false" isInGroup="80">
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::PointyButton" x="189" y="105" w="56" h="-1" measuredW="49" measuredH="27" zOrder="4" locked="false" isInGroup="80">
           <controlProperties>
             <direction>center</direction>
             <size>10</size>
