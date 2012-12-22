@@ -29,6 +29,9 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Ve4-9t-8gI" kind="push" id="Luo-yf-T9u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,11 +43,14 @@
                         <barButtonItem key="rightBarButtonItem" title="+" id="xss-Cv-vH8">
                             <connections>
                                 <action selector="createNewList:" destination="53u-sm-bGf" id="eBX-Pi-5jb"/>
-                                <segue destination="A8g-fy-0rr" kind="push" id="vB6-br-ywo"/>
+                                <segue destination="A8g-fy-0rr" kind="push" identifier="pushFromLists" id="vB6-br-ywo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="1Nc-Mc-Fb8" id="Aap-bX-nHG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HB4-WF-jna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +168,87 @@
             </objects>
             <point key="canvasLocation" x="1718" y="-33"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mUM-cd-9zq">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Ve4-9t-8gI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="caV-Sk-O3H"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="x0b-he-HQD">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="P4X-6a-oov" kind="relationship" relationship="viewControllers" id="v9i-Hg-MHu"/>
+                        <segue destination="5O1-Ig-7yo" kind="relationship" relationship="viewControllers" id="coj-1w-cts"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feb-m0-05f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518" y="-33"/>
+        </scene>
+        <!--Done Items View Controller - Done-->
+        <scene sceneID="FXf-YU-e4I">
+            <objects>
+                <tableViewController title="Done" id="5O1-Ig-7yo" customClass="DoneItemsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xb9-LK-BHS">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xnb-fR-qO8">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5O1-Ig-7yo" id="wOM-hL-LhL"/>
+                            <outlet property="delegate" destination="5O1-Ig-7yo" id="7nV-fr-eec"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Done" id="x0r-Tm-9EN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JJ-Q0-or1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="211"/>
+        </scene>
+        <!--Pending Items View Controller - Pending-->
+        <scene sceneID="PWN-QK-Hzi">
+            <objects>
+                <tableViewController title="Pending" id="P4X-6a-oov" customClass="PendingItemsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AKx-KM-mc5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Q2c-25-VxP">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="P4X-6a-oov" id="35N-RP-44i"/>
+                            <outlet property="delegate" destination="P4X-6a-oov" id="Cc6-Bg-IVI"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Pending" id="wv5-Pv-3oz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mBQ-hn-AyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="-449"/>
+        </scene>
         <!--Create Item View Controller - Add New Item-->
         <scene sceneID="ZlU-ud-xlf">
             <objects>
@@ -238,7 +325,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xt8-qf-fQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="-33"/>
+            <point key="canvasLocation" x="805" y="-33"/>
         </scene>
     </scenes>
     <classes>
@@ -248,14 +335,21 @@
         <class className="CreateListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateListViewController.h"/>
         </class>
+        <class className="DoneItemsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DoneItemsViewController.h"/>
+        </class>
         <class className="MainViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="createNewList:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PendingItemsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PendingItemsViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

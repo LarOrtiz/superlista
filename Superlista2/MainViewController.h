@@ -11,9 +11,8 @@
 @interface MainViewController : UITableViewController
 {
     NSArray *listsTitle;
-
+    NSInteger listId;
 }
-
 
 - (IBAction)createNewList:(UIBarButtonItem *)sender;
 
