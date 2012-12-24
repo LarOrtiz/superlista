@@ -11,9 +11,9 @@
 // Toy class until I figure out how to deal with the DB
 @interface Entity : NSObject
 
-@property (readonly) NSNumber * id;
+@property (readonly) int id;
 
-- (id)init: (NSNumber *) id;
+- (id)init: (int) id;
 
 
 @end

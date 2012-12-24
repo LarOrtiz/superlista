@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "List.h"
 
 @interface DoneItemsViewController : UITableViewController
+@property (weak,nonatomic) List * list;
 
 @end

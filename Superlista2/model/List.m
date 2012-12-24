@@ -10,19 +10,36 @@
 
 @implementation List
 
-- (id)init: (NSNumber *)id withTitle:(NSString *)title;
+- (id)init: (int)id withTitle:(NSString *)title;
 {
     self = [super init: id];
     if (self) {
         self.title = title;
-        self.items = [[NSMutableDictionary alloc] init];
+        self.items = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 -(void)add:(ListItem *)item
 {
-    [self.items setObject:item forKey: item.id];
+    [self.items addObject: item];
 }
+
+-(NSArray *)getPending{
+    return [self.items filteredArrayUsingPredicate: [NSPredicate predicateWithBlock:
+                        ^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                            ListItem * item =evaluatedObject;
+                            return item.pending;
+                        }]];
+}
+
+-(NSArray *)getDone{
+    return [self.items filteredArrayUsingPredicate: [NSPredicate predicateWithBlock:
+                        ^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                            ListItem * item =evaluatedObject;
+                            return !item.pending;
+                        }]];
+}
+
 
 @end

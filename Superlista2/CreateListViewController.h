@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "List.h"
+#import "ListProvider.h"
 
-@interface CreateListViewController : UITableViewController
-{
-    NSArray * items;
-}
+@interface CreateListViewController : UITableViewController <UITextFieldDelegate>
 
+@property (strong,nonatomic) ListProvider * listProvider;
+@property (strong, nonatomic) List * list;
+- (IBAction)createItem:(UIButton *)sender;
+- (IBAction)createList:(UIBarButtonItem *)sender;
 
 @end

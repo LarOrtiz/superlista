@@ -14,7 +14,7 @@
 @property (readonly) NSString * name;
 @property (readonly) NSArray * domain;
 
-- (id)init: (NSNumber *)id withTitle: (NSString *)name withAllowableValues: (NSArray *) values;
+- (id)init: (int)id withTitle: (NSString *)name withAllowableValues: (NSArray *) values;
 
 
 @end

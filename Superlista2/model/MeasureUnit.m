@@ -10,7 +10,7 @@
 
 @implementation MeasureUnit
 
-- (id)init: (NSNumber *) id withTitle:(NSString *)name withAllowableValues: (NSArray *) values
+- (id)init: (int) id withTitle:(NSString *)name withAllowableValues: (NSArray *) values
 {
     self = [super init: id];
     if (self) {

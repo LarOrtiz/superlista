@@ -11,7 +11,7 @@
 
 @implementation Entity
 
-- (id)init: (NSNumber *) id
+- (id)init: (int) id
 {
     self = [super init];
     if (self) {

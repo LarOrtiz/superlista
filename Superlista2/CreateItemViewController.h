@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListProvider.h"
+#import "MeasureUnitProvider.h"
 
-@interface CreateItemViewController : UIViewController
+@interface CreateItemViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    MeasureUnit * _currentUnit;
+    NSNumber * _quantity;
+}
+
+@property (strong, nonatomic) IBOutlet UITextField *itemName;
+@property (strong, nonatomic) IBOutlet UIPickerView *unitPicker;
+@property (strong, nonatomic) MeasureUnitProvider * unitProvider;
+@property (strong, nonatomic) List * list;
+
+- (IBAction)saveItem:(UIBarButtonItem *)sender;
 
 @end

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListProvider.h"
 
 @interface MainViewController : UITableViewController
 {
-    NSArray *listsTitle;
-    NSInteger listId;
+    NSMutableArray * _lists;
+    List * _currentList;
 }
 
 - (IBAction)createNewList:(UIBarButtonItem *)sender;

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "List.h"
 @interface PendingItemsViewController : UITableViewController
 
-@property NSInteger listId;
+@property (weak,nonatomic) List * list;
 
 @end

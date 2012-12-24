@@ -14,11 +14,16 @@
 @interface List : Entity
 
 @property NSString * title;
-@property NSMutableDictionary * items;
+@property NSMutableArray * items;
 
 
-- (id)init: (NSNumber *)id withTitle:(NSString *)title;
+- (id)init: (int)id withTitle:(NSString *)title;
 
 -(void)add:(ListItem *)item;
+
+-(NSArray *)getPending;
+
+-(NSArray *)getDone;
+
 
 @end

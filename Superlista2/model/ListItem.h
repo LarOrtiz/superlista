@@ -13,9 +13,11 @@
 
 @property NSString * title;
 @property (weak) MeasureUnit * unit;
-@property NSInteger quantity;
+@property int quantity;
+@property Boolean pending;
 
-- (id)init: (NSNumber *)id withTitle:(NSString *)title withUnit:(MeasureUnit *) unit;
+- (id)init: (int)id withTitle:(NSString *)title withUnit:(MeasureUnit *) unit;
 
+-(NSString *)description;
 
 @end

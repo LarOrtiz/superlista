@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "PendingItemsViewController.h"
+#import "DoneItemsViewController.h"
 
 @interface MainViewController ()
 @end
@@ -17,23 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    listsTitle = @[@"List1",@"List2",@"List3",@"List4", @"List5"];
+    ListProvider * provider = [[ListProvider alloc] init];
+    _lists = [[NSMutableArray alloc] init];
+    _lists = provider.getAll;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{    
-    return listsTitle.count;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -44,24 +33,45 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = listsTitle[indexPath.row];
+    List * list = _lists[indexPath.row];
+    cell.textLabel.text = list.title;
     return cell;
 
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{    
     if ([segue.identifier isEqualToString: @"pushFromLists"]) {
-        PendingItemsViewController * pendingVC = [segue destinationViewController];
-        pendingVC.listId = listId;
+        UITabBarController  * tabVC = [segue destinationViewController];
+        PendingItemsViewController * pendingVC = tabVC.viewControllers[0];
+        DoneItemsViewController * doneVC = tabVC.viewControllers[1];
+        pendingVC.list = _currentList;
+        doneVC.list = _currentList;
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _lists.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    listId = indexPath.row;
+    _currentList = _lists[indexPath.row];
+    [self performSegueWithIdentifier:@"pushFromLists" sender:self.view];
 }
 
 - (IBAction)createNewList:(UIBarButtonItem *)sender {
     NSLog(@"HELLOOO");
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 @end

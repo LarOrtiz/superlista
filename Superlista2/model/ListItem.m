@@ -10,13 +10,19 @@
 
 @implementation ListItem
 
-- (id)init: (NSNumber *)id withTitle:(NSString *)title withUnit:(MeasureUnit *) unit
+- (id)init: (int)id withTitle:(NSString *)title withUnit:(MeasureUnit *) unit
 {
     self = [super init: id];
     if (self) {
         self.unit = unit;
         self.title = title;
+        self.pending = true;
     }
     return self;
 }
+
+-(NSString *) description {
+    return [NSString stringWithFormat:@"%d %@",self.quantity, self.unit.name];
+}
+
 @end
