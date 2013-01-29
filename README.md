@@ -38,3 +38,10 @@ Desde la pantalla de listas:
 
 La pantalla tiene dos tabs uno para ver los elementos que estan pendientes y otro para ver los terminados. 
 Se puede navegar entre ellas para revisar como vamos.
+
+Screenshots
+--
+
+![Superlistame](https://raw.github.com/ascoppa/superlista/master/screenshots/superlista1.png)
+
+![Superlistame](https://raw.github.com/ascoppa/superlista/master/screenshots/superlista2.png)
